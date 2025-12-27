@@ -1,19 +1,230 @@
+/* ================= GLOBAL ================= */
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+  background: #0b1220;
+  color: #e5e7eb;
 }
 
+h1, h2, h3, h4 {
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+p {
+  color: #9ca3af;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #374151;
+  cursor: not-allowed;
+}
+
+/* ================= INPUTS ================= */
+
+select, input {
+  background: #0f172a;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+select {
+  min-width: 260px;
+}
+
+/* ================= STEP SECTIONS ================= */
+
+section {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #1f2937;
+}
+
+/* ================= COURSE LIST ================= */
+
+#courseList > div {
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ================= CGPA CARD ================= */
+
+.cgpa-card {
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.cgpa-card h1 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.cgpa-card p {
+  color: #dbeafe;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.15);
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#cgpaProgress {
+  height: 100%;
+  width: 0%;
+  background: #60a5fa;
+  transition: width 0.5s ease;
+}
+
+/* ================= SUB CARD ================= */
+
+.sub-card {
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ================= GRADE SUMMARY ================= */
+
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.grade-grid div {
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.grade-grid span {
+  font-size: 22px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ================= GRADE SCALE ================= */
+
+.grade-scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.grade-scale span {
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* ================= NAV (OPTIONAL) ================= */
+
 nav a {
+  color: #60a5fa;
   margin-right: 15px;
   text-decoration: none;
 }
 
-.card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 10px 0;
+nav a:hover {
+  text-decoration: underline;
 }
 
-button {
-  margin-top: 10px;
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .grade-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cgpa-card h1 {
+    font-size: 36px;
+  }
+}
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.program-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.program-card:hover {
+  border-color: #3b82f6;
+}
+
+.program-card.active {
+  border: 2px solid #3b82f6;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
+
+.program-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkmark {
+  color: #3b82f6;
+  font-size: 18px;
+}
+
+.step-desc {
+  color: #94a3b8;
+  margin-bottom: 12px;
 }

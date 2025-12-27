@@ -1,39 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CGPA Calculator</title>
+  <meta charset="UTF-8">
+  <title>CGPA Calculator | IITM BS</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <h1>CGPA Calculator</h1>
+<p>
+Calculate your CGPA based on completed IIT Madras BS courses
+(S–E grades only).
+</p>
 
-<table id="cgpaTable">
-  <tr>
-    <th>Credits</th>
-    <th>Grade</th>
-  </tr>
-  <tr>
-    <td><input type="number" class="credits"></td>
-    <td>
-      <select class="grade">
-        <option value="">Select</option>
-        <option value="10">S</option>
-        <option value="9">A</option>
-        <option value="8">B</option>
-        <option value="7">C</option>
-        <option value="6">D</option>
-        <option value="5">E</option>
-        <option value="0">U</option>
-      </select>
-    </td>
-  </tr>
-</table>
+<p id="stepIndicator" style="margin-bottom:10px; color:#9ca3af;">
+  Step 1 of 3 • Program Selection
+</p>
 
-<button onclick="addRow()">Add Subject</button>
-<button onclick="calculateCGPA()">Calculate</button>
+<!-- ================= STEP 1 ================= -->
+<section id="step1">
+  <h2>Step 1: Choose Your Program Level</h2>
+  <p class="step-desc">
+    Select the academic level you are currently enrolled in.
+    Relevant courses will be shown in the next step.
+  </p>
 
-<h2 id="result"></h2>
+  <div class="program-grid">
+
+    <div class="program-card"
+         onclick="selectProgram('foundation', this)">
+      <div class="card-header">
+        <h3>Foundation</h3>
+      </div>
+      <p>Core courses</p>
+      <small>8 courses • 32 credits</small>
+    </div>
+
+    <div class="program-card"
+         onclick="selectProgram('diploma', this)">
+      <div class="card-header">
+        <h3>Diploma</h3>
+      </div>
+      <p>Intermediate specialization stage</p>
+      <small>12 courses + 4 projects • 54 credits</small>
+    </div>
+
+    <div class="program-card"
+         onclick="selectProgram('degree', this)">
+      <div class="card-header">
+        <h3>BS Degree</h3>
+      </div>
+      <p>Advanced degree-level courses</p>
+      <small>56 credits</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= STEP 2 ================= -->
+<section id="step2" style="display:none;">
+  <h2>Step 2: Add Your Courses</h2>
+
+  <div style="margin-bottom: 12px;">
+    <select id="courseSelect">
+      <option value="">Select a course to add</option>
+    </select>
+    <button onclick="addCourse()">+ Add Course</button>
+  </div>
+
+  <!-- ADDED COURSES -->
+  <div id="courseList"></div>
+
+  <br>
+
+  <button onclick="calculateCGPA()">View Results</button>
+  <button onclick="goBackToStep1()" style="margin-left:10px;">
+    ⬅ Back
+  </button>
+</section>
+
+<!-- ================= STEP 3 ================= -->
+<section id="step3" style="display:none;">
+
+  <!-- OVERALL CGPA CARD -->
+  <div class="cgpa-card">
+    <h3>Overall CGPA</h3>
+    <h1 id="overallCgpa">0.00</h1>
+    <p>
+      <span id="cgpaPercent">0%</span> •
+      <span id="totalCredits">0</span> credits •
+      <span id="totalCourses">0</span> courses
+    </p>
+
+    <div class="progress-bar">
+      <div id="cgpaProgress"></div>
+    </div>
+  </div>
+
+  <!-- PROGRAM CGPA -->
+  <div class="sub-card">
+    <h4>Program CGPA</h4>
+    <h2 id="foundationCgpa">0.00</h2>
+    <p id="foundationMeta">0 credits • 0 courses</p>
+  </div>
+
+  <!-- COURSE SUMMARY -->
+  <h3>Course Summary</h3>
+  <div class="grade-grid">
+    <div>S<br><span id="countS">0</span></div>
+    <div>A<br><span id="countA">0</span></div>
+    <div>B<br><span id="countB">0</span></div>
+    <div>C<br><span id="countC">0</span></div>
+    <div>D<br><span id="countD">0</span></div>
+    <div>E<br><span id="countE">0</span></div>
+  </div>
+
+  <!-- GRADING SCALE -->
+  <h3>IIT Madras Grading Scale</h3>
+  <div class="grade-scale">
+    <span>S = 10</span>
+    <span>A = 9</span>
+    <span>B = 8</span>
+    <span>C = 7</span>
+    <span>D = 6</span>
+    <span>E = 4</span>
+    <span>U = 0</span>
+  </div>
+
+  <br>
+  <button onclick="goBackToStep2()">⬅ Back</button>
+
+</section>
 
 <script src="../js/cgpa.js"></script>
 </body>
