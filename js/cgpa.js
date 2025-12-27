@@ -35,17 +35,28 @@ diploma: [
   { id: "ba", name: "Business Analytics (Option 1)", credits: 4 },
   { id: "dlgenai", name: "Introduction to Deep Learning and Generative AI (Option 2)", credits: 4 },
   { id: "dlgenaip", name: "Deep Learning and Generative AI - Project (Option 2)", credits: 2 }
-],
+  ],
 
-  degree: [
-    { id: "ai", name: "Artificial Intelligence", credits: 4 },
-    { id: "dl", name: "Deep Learning", credits: 4 },
-    { id: "nlp", name: "Natural Language Processing", credits: 4 },
-    { id: "cv", name: "Computer Vision", credits: 4 },
-    { id: "bd", name: "Big Data Analytics", credits: 4 },
-    { id: "cloud", name: "Cloud Computing", credits: 4 },
-    { id: "advml", name: "Advanced Machine Learning", credits: 4 },
-    { id: "capstone", name: "Capstone Project", credits: 8 }
+  bscdegree: [
+  { id: "dl", name: "Deep Learning", credits: 4 },
+  { id: "ai", name: "Artificial Intelligence: Search Methods for Problem Solving", credits: 4 },
+  { id: "st", name: "Speech Technology", credits: 4 },
+  { id: "nlp", name: "Natural Language Processing", credits: 4 },
+  { id: "bd", name: "Big Data", credits: 4 },
+  { id: "cv", name: "Computer Vision", credits: 4 },
+  { id: "advalgo", name: "Advanced Algorithms", credits: 4 },
+  { id: "se", name: "Software Engineering", credits: 4 }
+  ],
+
+  bsdegree: [
+  { id: "capstone", name: "Capstone Project", credits: 8 },
+  { id: "industry", name: "Industry Immersion", credits: 4 },
+  { id: "research", name: "Research Methods", credits: 4 },
+  { id: "ads", name: "Advanced Data Science", credits: 4 },
+  { id: "rl", name: "Reinforcement Learning", credits: 4 },
+  { id: "blockchain", name: "Blockchain Technology", credits: 4 },
+  { id: "cloud", name: "Cloud Computing", credits: 4 },
+  { id: "ethics", name: "Ethics in AI", credits: 4 }
   ]
 };
 
