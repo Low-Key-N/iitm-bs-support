@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>CGPA Calculator</h1>
+
+<table id="cgpaTable">
+  <tr>
+    <th>Credits</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td><input type="number" class="credits"></td>
+    <td>
+      <select class="grade">
+        <option value="">Select</option>
+        <option value="10">S</option>
+        <option value="9">A</option>
+        <option value="8">B</option>
+        <option value="7">C</option>
+        <option value="6">D</option>
+        <option value="5">E</option>
+        <option value="0">U</option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+<button onclick="addRow()">Add Subject</button>
+<button onclick="calculateCGPA()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<script src="../js/cgpa.js"></script>
+</body>
+</html>
