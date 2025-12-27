@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>End-Term Marks Predictor</title>
+  <meta charset="UTF-8">
+  <title>End Term Marks Predictor | IITM BS</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<h1>End-Term Marks Predictor</h1>
+<h1>End Term Marks Predictor</h1>
+<p>Select your level and subject to predict required end-term marks.</p>
 
-<input type="number" id="current" placeholder="Current marks">
-<input type="number" id="target" placeholder="Target total marks">
-<button onclick="predict()">Predict</button>
+<!-- LEVEL SELECT -->
+<label>Select Your Level</label>
+<select id="levelSelect" onchange="updateSubjects()">
+  <option value="">-- Select Level --</option>
+  <option value="foundation">Foundation</option>
+  <option value="diploma">Diploma</option>
+  <option value="degree">Degree</option>
+</select>
 
-<h2 id="predictResult"></h2>
+<br><br>
+
+<!-- SUBJECT SELECT -->
+<label>Select Your Subject</label>
+<select id="subjectSelect" disabled>
+  <option value="">-- Select Subject --</option>
+</select>
+
+<br><br>
+
+<!-- MARK INPUTS -->
+<input type="number" id="currentMarks" placeholder="Current Marks">
+<input type="number" id="targetMarks" placeholder="Target Total Marks">
+
+<br><br>
+
+<button onclick="predictMarks()">Predict</button>
+
+<h2 id="result"></h2>
 
 <script src="../js/predictor.js"></script>
+
 </body>
 </html>
