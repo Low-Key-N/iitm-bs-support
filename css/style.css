@@ -317,3 +317,15 @@ section {
     margin-top: 10px;
   }
 }
+
+.section-subtext {
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
